@@ -23,3 +23,9 @@ test("4 should be IV", function() {
   var roman = romansNumber.convert(4);
   ok("IV" === roman, "4 should be IV, current: " + roman);
 });
+
+test("90 should be XC", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(90);
+  ok("XC" === roman, "90 should be XC, current: " + roman);
+});
