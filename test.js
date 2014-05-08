@@ -17,3 +17,9 @@ test("10 should be X", function() {
   var roman = romansNumber.convert(10);
   ok("X" === roman, "10 should be X, current: " + roman);
 });
+
+test("4 should be IV", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(4);
+  ok("IV" === roman, "4 should be IV, current: " + roman);
+});

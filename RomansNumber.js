@@ -14,7 +14,14 @@ function RomansNumber(){
   var obj = {
     number:0,
     convert: function(num){
-      return baseRoman[num.toString()];
+      var basic = baseRoman[num.toString()];
+      var lessbasic = baseRoman[(num+1).toString()];
+      if(basic){
+        return basic;
+      }
+      else if(lessbasic){
+        return baseRoman[(1).toString()]+lessbasic;
+      }
     }
   };
 
