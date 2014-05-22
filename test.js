@@ -139,3 +139,21 @@ test("11 should be XI", function() {
   // var roman = romansNumber.convert(6);
   // ok("VI" === roman, "6 should be VI, current: " + roman);
 // });
+
+// Test RomansNumberMinus
+function makeATest(number, roman)
+{
+  test(number + " should be " + roman, function() {
+  var romansNumber = new RomansNumberMinus();
+  var result = romansNumber.convert(number);
+  ok(roman === result, number + " should be " + roman + ", current: " + result);
+  });
+}
+
+makeATest(1, "I");
+makeATest(2, "II");
+makeATest(3, "III");
+
+makeATest(10, "X");
+makeATest(20, "XX");
+makeATest(30, "XXX");
