@@ -30,6 +30,24 @@ test("5 should be V", function() {
   ok("V" === roman, "5 should be V, current: " + roman);
 });
 
+test("6 should be VI", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(6);
+  ok("VI" === roman, "6 should be VI, current: " + roman);
+});
+
+test("7 should be VII", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(7);
+  ok("VII" === roman, "7 should be VII, current: " + roman);
+});
+
+test("9 should be IX", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(9);
+  ok("IX" === roman, "9 should be IX, current: " + roman);
+});
+
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);
