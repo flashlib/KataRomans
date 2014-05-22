@@ -18,12 +18,22 @@ test("10 should be X", function() {
   ok("X" === roman, "10 should be X, current: " + roman);
 });
 
-
-
 test("4 should be IV", function() {
   var romansNumber = new RomansNumber();
   var roman = romansNumber.convert(4);
   ok("IV" === roman, "4 should be IV, current: " + roman);
+});
+
+test("40 should be XL", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(40);
+  ok("XL" === roman, "40 should be XL, current: " + roman);
+});
+
+test("400 should be CD", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(400);
+  ok("CD" === roman, "400 should be CD, current: " + roman);
 });
 
 // test("90 should be XC", function() {
@@ -31,8 +41,6 @@ test("4 should be IV", function() {
   // var roman = romansNumber.convert(90);
   // ok("XC" === roman, "90 should be XC, current: " + roman);
 // });
-
-
 
 // test("6 should be VI", function() {
   // var romansNumber = new RomansNumber();
