@@ -18,14 +18,24 @@ test("10 should be X", function() {
   ok("X" === roman, "10 should be X, current: " + roman);
 });
 
-// test("4 should be IV", function() {
-  // var romansNumber = new RomansNumber();
-  // var roman = romansNumber.convert(4);
-  // ok("IV" === roman, "4 should be IV, current: " + roman);
-// });
-//
+
+
+test("4 should be IV", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(4);
+  ok("IV" === roman, "4 should be IV, current: " + roman);
+});
+
 // test("90 should be XC", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(90);
   // ok("XC" === roman, "90 should be XC, current: " + roman);
+// });
+
+
+
+// test("6 should be VI", function() {
+  // var romansNumber = new RomansNumber();
+  // var roman = romansNumber.convert(6);
+  // ok("VI" === roman, "6 should be VI, current: " + roman);
 // });
