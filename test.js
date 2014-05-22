@@ -48,6 +48,12 @@ test("9 should be IX", function() {
   ok("IX" === roman, "9 should be IX, current: " + roman);
 });
 
+test("10 should be X", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(10);
+  ok("X" === roman, "10 should be X, current: " + roman);
+});
+
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);

@@ -6,7 +6,7 @@ function RomansNumber() {"use strict";
     // {number: 9, roman: 'IX'},
      {number: 10, roman: 'X'},
     // {number: 40, roman: 'XL'},
-    // {number: 50, roman: 'L'},
+     {number: 50, roman: 'L'},
     // {number: 90, roman: 'XC'},
     // {number: 100, roman: 'C'},
     // {number: 400, roman: 'CD'},
@@ -19,29 +19,42 @@ function RomansNumber() {"use strict";
      convert: function(num) {
        var returnNum = '';
        var offset = 0;
+       var baseNumberObjIndex = 0;
+       var vvv = num/10;
+       while(vvv >= 1){
+         vvv = vvv/10;
+         baseNumberObjIndex++;
+        // alert(vvv);
+       }
 
+      if(baseNumberObjIndex > 0)
+      {
+           num = num / 10;
+      }
+
+      //alert(num);
       if (num === 9)
       {
-        returnNum = baseNumObj[0].roman + baseNumObj[2].roman;
+        returnNum = baseNumObj[baseNumberObjIndex].roman + baseNumObj[baseNumberObjIndex+2].roman;
       }
       else if (num > 5) {
         offset = num - 5;
 
-        returnNum = baseNumObj[1].roman;
+        returnNum = baseNumObj[baseNumberObjIndex+1].roman;
         for (var i = 0; i < offset; i++) {
-           returnNum += baseNumObj[0].roman;
+           returnNum += baseNumObj[baseNumberObjIndex].roman;
         }
       } else if (num === 5) {
-        returnNum = baseNumObj[1].roman;
+        returnNum = baseNumObj[baseNumberObjIndex+1].roman;
       } else if (num < 5) {
         offset = num;
         if (offset < 4) {// 1,2,3
           for (var i = 0; i < offset; i++) {
-            returnNum += baseNumObj[0].roman;
+            returnNum += baseNumObj[baseNumberObjIndex * 2].roman;
           }
         } else// 4
         {
-          returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
+          returnNum = baseNumObj[baseNumberObjIndex].roman + baseNumObj[baseNumberObjIndex+1].roman;
         }
       }
 
