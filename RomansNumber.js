@@ -8,7 +8,7 @@ function RomansNumber() {"use strict";
     // {number: 40, roman: 'XL'},
      {number: 50, roman: 'L'},
     // {number: 90, roman: 'XC'},
-    // {number: 100, roman: 'C'},
+     {number: 100, roman: 'C'},
     // {number: 400, roman: 'CD'},
     // {number: 500, roman: 'D'},
     // {number: 900, roman: 'CM'},
@@ -16,7 +16,7 @@ function RomansNumber() {"use strict";
    ];
 
   var obj = {
-     convert: function(num) {
+     convertOneNum: function(num) {
        var returnNum = '';
        var offset = 0;
        var baseNumberObjIndex = 0;
@@ -24,28 +24,22 @@ function RomansNumber() {"use strict";
        while(vvv >= 1){
          vvv = vvv/10;
          baseNumberObjIndex++;
-        // alert(vvv);
+         num = num / 10;
        }
 
-      if(baseNumberObjIndex > 0)
-      {
-           num = num / 10;
-      }
-
-      //alert(num);
       if (num === 9)
       {
-        returnNum = baseNumObj[baseNumberObjIndex].roman + baseNumObj[baseNumberObjIndex+2].roman;
+        returnNum = baseNumObj[baseNumberObjIndex * 2].roman + baseNumObj[baseNumberObjIndex*2+2].roman;
       }
       else if (num > 5) {
         offset = num - 5;
 
-        returnNum = baseNumObj[baseNumberObjIndex+1].roman;
+        returnNum = baseNumObj[baseNumberObjIndex*2+1].roman;
         for (var i = 0; i < offset; i++) {
-           returnNum += baseNumObj[baseNumberObjIndex].roman;
+           returnNum += baseNumObj[baseNumberObjIndex *2 ].roman;
         }
       } else if (num === 5) {
-        returnNum = baseNumObj[baseNumberObjIndex+1].roman;
+        returnNum = baseNumObj[baseNumberObjIndex * 2+1].roman;
       } else if (num < 5) {
         offset = num;
         if (offset < 4) {// 1,2,3
@@ -54,51 +48,25 @@ function RomansNumber() {"use strict";
           }
         } else// 4
         {
-          returnNum = baseNumObj[baseNumberObjIndex].roman + baseNumObj[baseNumberObjIndex+1].roman;
+          returnNum = baseNumObj[baseNumberObjIndex*2].roman + baseNumObj[baseNumberObjIndex*2+1].roman;
         }
       }
-
-
-
-
-      // var returnNum = '';
-      // for (var i = 0; i < baseNumObj.length; i++) {
-        // if (baseNumObj[i].number == num) {
-          // return baseNumObj[i].roman;
-        // }
-      // }
-
-      // if (i === baseNum.length) {
-        // var index = 0;
-        // do {
-          // var convertNum = num % 10;
-          // num = num / 10;
-          // var tempStr = change(convertNum, index);
-          // returnNum = tempStr + returnNum;
-          // index++;
-          // //alert(num);
-        // } while(num>=1);
-      // }
-
-      // function change(convertNum, index) {
-        // var strReturn;
-        // if (convertNum === 5) {
-          // strReturn = charator[index + 1];
-        // } else if (convertNum < 5) {
-          // //var offSet = 5 - convertNum;
-          // if (convertNum === 4) {
-            // strReturn = charator[index] + charator[index + 1];
-          // } else {
-            // strReturn = charator[index] + charator[index + 1];
-          // }
-        // } else {
-//
-        // }
-        // return strReturn;
-      // }
-
       return returnNum;
-    }
+    },
+
+    convert: function(num){
+        var returnStr="";
+        var m = 0;
+        var tempNum = num;
+         do{
+            returnStr = this.convertOneNum((tempNum%10) * (Math.pow(10, m))) + returnStr;
+            console.log('num = ' + num + ',tempNum =' + (tempNum%10) * (Math.pow(10, m)));
+            tempNum = Math.floor(tempNum/10);
+
+            m++;
+         }while(tempNum>=1);
+        return returnStr;
+      }
 
     // convert2: function(num) {
       // var returnStr = "";

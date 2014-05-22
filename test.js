@@ -54,6 +54,42 @@ test("10 should be X", function() {
   ok("X" === roman, "10 should be X, current: " + roman);
 });
 
+test("20 should be XX", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(20);
+  ok("XX" === roman, "20 should be XX, current: " + roman);
+});
+
+test("40 should be XL", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(40);
+  ok("XL" === roman, "40 should be XL, current: " + roman);
+});
+
+test("50 should be L", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(50);
+  ok("L" === roman, "50 should be L, current: " + roman);
+});
+
+test("60 should be L", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(60);
+  ok("LX" === roman, "50 should be LX, current: " + roman);
+});
+
+test("90 should be XC", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(90);
+  ok("XC" === roman, "90 should be XC, current: " + roman);
+});
+
+test("11 should be XI", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(11);
+  ok("XI" === roman, "11 should be XI, current: " + roman);
+});
+
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);
