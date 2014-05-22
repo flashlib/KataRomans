@@ -157,3 +157,18 @@ makeATest(3, "III");
 makeATest(10, "X");
 makeATest(20, "XX");
 makeATest(30, "XXX");
+
+makeATest(4, "IV");
+makeATest(5, "V");
+
+makeATest(6, "VI");
+makeATest(7, "VII");
+makeATest(8, "VIII");
+
+makeATest(9, "IX");
+
+makeATest(11, "XI");
+
+// ...
+
+makeATest(2999, "MMCMXCIX");

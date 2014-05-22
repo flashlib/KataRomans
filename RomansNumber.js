@@ -19,6 +19,8 @@ function RomansNumber() {"use strict";
      convertOneNum: function(num) {
        var returnNum = '';
        var offset = 0;
+
+       // 算出num的位数
        var baseNumberObjIndex = 0;
        var vvv = num/10;
        while(vvv >= 1){
