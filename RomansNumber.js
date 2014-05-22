@@ -1,8 +1,8 @@
 function RomansNumber() {"use strict";
-  // var baseNumObj = [
-    // {number: 1, roman: 'I'},
+   var baseNumObj = [
+     {number: 1, roman: 'I'},
     // {number: 4, roman: 'IV'},
-    // {number: 5, roman: 'V'},
+     {number: 5, roman: 'V'},
     // {number: 9, roman: 'IX'},
     // {number: 10, roman: 'X'},
     // {number: 40, roman: 'XL'},
@@ -13,7 +13,7 @@ function RomansNumber() {"use strict";
     // {number: 500, roman: 'D'},
     // {number: 900, roman: 'CM'},
     // {number: 1000, roman: 'M'},
-  // ];
+   ];
 
   var obj = {
      convert: function(num) {
@@ -29,11 +29,14 @@ function RomansNumber() {"use strict";
        var temp = num;
        if(num<4){
          while(temp-->0){
-           returnNum += "I";
+           returnNum += baseNumObj[0].roman;
          }
-
        }
-
+       else{
+          if(num === 4){
+            returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
+          }
+       }
       // var returnNum = '';
       // for (var i = 0; i < baseNumObj.length; i++) {
         // if (baseNumObj[i].number == num) {

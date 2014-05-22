@@ -18,6 +18,11 @@ test("3 should be III", function() {
   ok("III" === roman, "3 should be III, current: " + roman);
 });
 
+test("4 should be IV", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(4);
+  ok("IV" === roman, "4 should be IV, current: " + roman);
+});
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);
