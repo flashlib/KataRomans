@@ -26,17 +26,23 @@ function RomansNumber() {"use strict";
          // return "II";
        // }
        var returnNum = '';
+       var offset = 0;
        var temp = num;
-       if(num<4){
-         while(temp-->0){
-           returnNum += baseNumObj[0].roman;
-         }
-       }
-       else{
-          if(num === 4){
-            returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
+       if(num<5){
+
+          offset = 5-num;
+          for(var i = 0; i<temp; i++){
+            if(offset>1){
+            returnNum += baseNumObj[0].roman;
+          }else{
+           returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
           }
+          }
+
+
+
        }
+
       // var returnNum = '';
       // for (var i = 0; i < baseNumObj.length; i++) {
         // if (baseNumObj[i].number == num) {
