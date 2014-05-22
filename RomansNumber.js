@@ -17,7 +17,23 @@ function RomansNumber() {"use strict";
 
   var obj = {
      convert: function(num) {
-       return "I";
+       // if (num === 1)
+       // {
+        // return "I";
+       // }
+       // else if (num === 2)
+       // {
+         // return "II";
+       // }
+       var returnNum = '';
+       var temp = num;
+       if(num<4){
+         while(temp-->0){
+           returnNum += "I";
+         }
+
+       }
+
       // var returnNum = '';
       // for (var i = 0; i < baseNumObj.length; i++) {
         // if (baseNumObj[i].number == num) {

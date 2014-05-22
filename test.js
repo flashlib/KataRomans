@@ -6,6 +6,18 @@ test("1 should be I", function() {
   ok("I" === roman, "1 should be I, current: " + roman);
 });
 
+test("2 should be II", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(2);
+  ok("II" === roman, "2 should be II, current: " + roman);
+});
+
+test("3 should be III", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(3);
+  ok("III" === roman, "3 should be III, current: " + roman);
+});
+
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);
