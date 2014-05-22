@@ -17,30 +17,23 @@ function RomansNumber() {"use strict";
 
   var obj = {
      convert: function(num) {
-       // if (num === 1)
-       // {
-        // return "I";
-       // }
-       // else if (num === 2)
-       // {
-         // return "II";
-       // }
        var returnNum = '';
        var offset = 0;
-       var temp = num;
+       if (num === 5)
+       {
+         returnNum = baseNumObj[1].roman;
+       }
        if(num<5){
-
           offset = 5-num;
-          for(var i = 0; i<temp; i++){
-            if(offset>1){
-            returnNum += baseNumObj[0].roman;
-          }else{
-           returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
+          for(var i = 0; i<num; i++){
+            if(offset>1){// 1,2,3
+              returnNum += baseNumObj[0].roman;
+            }
+            else // 4
+            {
+              returnNum = baseNumObj[0].roman + baseNumObj[1].roman;
+            }
           }
-          }
-
-
-
        }
 
       // var returnNum = '';

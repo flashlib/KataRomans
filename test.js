@@ -23,6 +23,13 @@ test("4 should be IV", function() {
   var roman = romansNumber.convert(4);
   ok("IV" === roman, "4 should be IV, current: " + roman);
 });
+
+test("5 should be V", function() {
+  var romansNumber = new RomansNumber();
+  var roman = romansNumber.convert(5);
+  ok("V" === roman, "5 should be V, current: " + roman);
+});
+
 // test("2 should be II", function() {
   // var romansNumber = new RomansNumber();
   // var roman = romansNumber.convert(1);
