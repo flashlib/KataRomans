@@ -50,32 +50,24 @@ function RomansNumber() {"use strict";
       return returnNum;
     },
 
+    // 将一个整数拆分成各个位数的和，如2999=2000+900+90+9，分别转换再组合
     convert: function(num){
         var returnStr="";
-        var m = 0;
-        var tempNum = num;
-         do{
-            returnStr = this.convertOneNum((tempNum%10) * (Math.pow(10, m))) + returnStr;
-            console.log('num = ' + num + ',tempNum =' + (tempNum%10) * (Math.pow(10, m)));
-            tempNum = Math.floor(tempNum/10);
 
-            m++;
-         }while(tempNum>=1);
+         // 将数转换成字符的数组
+         var numArray = num.toString().split('');
+
+         // 总的数字个数
+         var totalDigit = numArray.length;
+
+         // 每次取出一个数，根据其所在位数，算出其值
+         for(var i = 0; i < totalDigit; i++)
+         {
+           var topDigitNum = numArray[i] * Math.pow(10, totalDigit - i - 1);
+           returnStr += this.convertOneNum(topDigitNum);
+         }
         return returnStr;
       }
-
-    // convert2: function(num) {
-      // var returnStr = "";
-//
-      // for (var i = baseNum.length - 1; i > 0; i--) {
-        // while (num >= baseNum[i]) {
-          // returnStr += charator[i];
-          // num -= baseNum[i];
-        // }
-      // }
-      // return returnStr;
-//
-    // }
   };
 
   return obj;
